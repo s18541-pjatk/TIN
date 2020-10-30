@@ -1,0 +1,13 @@
+form{
+    font-size: 50px;
+    font-style: italic;
+}
+#fname {
+    background-color: red;
+}
+#password{
+    background-color: red;
+}
+#textarea{
+    background-color: green;
+}

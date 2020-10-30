@@ -1,0 +1,17 @@
+.img1 {
+    float: right;
+}
+
+.img2 {
+    float: left;
+}
+
+.column1 {
+    float: left;
+    padding: 30px;
+    width: 50%;
+
+}
+.column2 {
+    clear: right;
+}
