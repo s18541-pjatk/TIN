@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6a</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    function convert()
+    {
+        document.getElementById('output').value = (document.getElementById('input').value - 32) * 5/9;
+    }
+</script>
+
+<p>Input Fahrenheit:</p>
+<input type = "number" id = "input" value="0">
+<input type = "button" onclick = "convert()" value = "Click to convert!">
+
+<p>Converted to Celsius:</p>
+<input type = "number" id = "output">
+
+</body>
+</html>
