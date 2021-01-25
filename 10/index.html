@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webpack</title>
+</head>
+<body>
+
+<h1>Temperature</h1>
+<form>
+    <label for="temperature"> Temperature: </label><input type="number" id="temperature">
+
+    <label for="from">Convert From: </label>
+    <select id="from">
+        <option value="fc">Celsius</option>
+        <option value="ff">Fahrenheit</option>
+        <option value="fk">Kelvin</option>
+    </select>
+
+    <label for="to">Convert To: </label>
+    <select id="to">
+        <option value="tc">Celsius</option>
+        <option value="tf">Fahrenheit</option>
+        <option value="tk">Kelvin</option>
+    </select>
+
+    <button type="button" id="convert_temperature">Convert</button>
+</form>
+
+<h1>Distance</h1>
+<form>
+    <label for="distance"> Distance: </label><input type="number" id="distance">
+
+    <label for="operation">Convert from: </label>
+    <select id="operation">
+        <option value="km">Kilometers to Miles</option>
+        <option value="mk">Miles to Kilometers</option>
+    </select>
+
+    <button type="button" id="convert_distance">Convert</button>
+</form>
+
+<br><br><br>
+<label for="result">Result: </label><input type="number" id="result" readonly>
+
+<script src="dist/app.js"></script>
+</body>
+</html>
