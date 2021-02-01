@@ -1,0 +1,57 @@
+drop table if exists Rent cascade;
+drop table if exists Bike cascade;
+drop table if exists Type cascade;
+drop table if exists User cascade;
+
+create table Type
+(
+	typeid varchar(25) not null
+		primary key,
+	price int not null
+);
+
+create table Bike
+(
+	bikeid int auto_increment
+		primary key,
+	typebike varchar(25) not null,
+	description varchar(500) null,
+	constraint Bike_Type_typeid_fk
+		foreign key (typebike) references Type (typeid)
+);
+
+create table User
+(
+	userid int auto_increment
+		primary key,
+	username varchar(25) not null,
+	password varchar(100) not null,
+	constraint User_username_uindex
+		unique (username)
+);
+
+create table Rent
+(
+	rentid int auto_increment
+		primary key,
+	timestamp timestamp default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP,
+	iduser int not null,
+	idbike int not null,
+	constraint Rent_Bike_bikeid_fk
+		foreign key (idbike) references Bike (bikeid),
+	constraint Rent_User_userid_fk
+		foreign key (iduser) references User (userid)
+);
+
+INSERT INTO Type (typeid, price) VALUES ('city', 20);
+INSERT INTO Type (typeid, price) VALUES ('extreme', 30);
+
+INSERT INTO Bike (bikeid, typebike, description) VALUES (1, 'extreme', null);
+INSERT INTO Bike (bikeid, typebike, description) VALUES (2, 'city', 'Test');
+INSERT INTO Bike (bikeid, typebike, description) VALUES (3, 'city', null);
+
+INSERT INTO User (userid, username, password) VALUES (1, 'adam', 'adam1');
+INSERT INTO User (userid, username, password) VALUES (2, 'andrzej', 'andrzej1');
+
+INSERT INTO Rent (rentid, timestamp, iduser, idbike) VALUES (1, '2021-02-01 21:35:41', 1, 2);
+INSERT INTO Rent (rentid, timestamp, iduser, idbike) VALUES (2, '2021-02-01 21:35:51', 2, 1);
